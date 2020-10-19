@@ -1,2 +1,4 @@
 # CreditCardFraud
 A quick notebook to detect credit card fraud with a kaggle dataset
+
+The notebook shows that the classes of the labels are very unbalanced. In an effort to combat this tried using the data as is with a random forest model to get a baseline and then tried using some different values for the class_weight hyperparameter of the scikit learn randomforestclassifier. The other thing I tried doing was to take the positive case records from the dataframe and repetitively appending them to the end of the dataframe until the classes were artificially no longer unbalanced. For metrics I primarily looked at the ROC score for each of the models. As a baseline with no feature or hyper parameter tuning, I got a ROC score of about 94% on the test set. Once I artificially fixed the class imbalance by adding repeats of records with the positive case i was able to get a ROC score of over 99.99% on the test set.
